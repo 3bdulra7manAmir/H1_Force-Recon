@@ -18,8 +18,6 @@
 
 ![Screenshot (101)](https://github.com/3bdulra7manAmir/h1-force-recon/assets/64253660/435e9b2e-9175-45dd-a012-da06e892dbcf)
 <br>
-![Screenshot (105)](https://github.com/3bdulra7manAmir/h1-force-recon/assets/64253660/d3b93c40-360b-4b21-ab64-908046e1f196)
-<br>
 ![Screenshot (114)](https://github.com/3bdulra7manAmir/h1-force-recon/assets/64253660/aa9f5739-b41f-498a-9dca-3274f065c546)
 <br>
 ![Screenshot (104)](https://github.com/3bdulra7manAmir/h1-force-recon/assets/64253660/a9833cae-1b30-4f14-b078-41bf880c431e)
