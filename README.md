@@ -9,7 +9,7 @@
 2. Extract the downloaded .zip<br>
 3. Copy all the folders inside the extracted zip in a folder called h1-mod in Your MWR directory<br>
 4. Download the release files or ".ff files" from the Repository release section: <a >here</a><br>
-5. Put these ffs into Your main game Directory, EX: "E:\Games\Call of Duty Modern Warfare Remastered" then paste em<br>
+5. Put these ffs into Your main game Directory, EX:"E:\Games\Call of Duty Modern Warfare Remastered" Then paste em<br>
 6. Launch the Game<br>
 7. Before you launch your mission press this key "`" and do "loadzone md" then hit Enter and "loadzone mwr_recon_force" then hit Enter.<br>
 <p>Note: when you are doing loadzone..... do it without the double quotes then start your mission.</p>
