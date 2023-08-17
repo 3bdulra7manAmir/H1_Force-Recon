@@ -1748,7 +1748,7 @@ bridge_zakhaev()
 
     // if ( isdefined( level.price.headmodel ) )
     //     var_8 attach( level.price.headmodel, "", 1 );
-    var_8 character\character_shadow_co_rnd::main(); //here
+    var_8 character\character_vil_shephered::main(); //here
 
     level.price delete();
     level.pricedummy = var_8;
