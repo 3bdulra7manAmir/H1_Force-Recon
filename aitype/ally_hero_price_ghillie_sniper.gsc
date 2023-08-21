@@ -25,10 +25,10 @@ main()
     switch( codescripts\character::get_random_character(2) )
     {
     case 0:
-		character\character_shadow_co_assault_b::main();
+		character\character_vil_shephered::main();
 		break;
 	case 1:
-		character\character_shadow_co_assault_c::main();
+		character\character_vil_shephered::main();
 		break;
     }
 }

@@ -21,15 +21,8 @@ main()
         self setengagementmaxdist( 512.0, 1024.0 );
     }
 
-    self.weapon = "deserteagle";
-    if ( level.script == "coup" )
-    {
-        character\character_shadow_co_rnd::main();
-    }
-    else
-    {
-        character\character_vil_makarov::main();
-    }
+    self.weapon = "ak74u";
+    character\character_vil_makarov::main();
 }
 
 spawner()
@@ -40,7 +33,7 @@ spawner()
 precache()
 {
     character\character_vil_makarov::precache();
-    precacheitem( "deserteagle" );
+    precacheitem( "ak74u" );
     precacheitem( "beretta" );
     precacheitem( "beretta" );
     precacheitem( "fraggrenade" );

@@ -5,7 +5,7 @@ main()
 {
     self.animtree = "";
     self.additionalassets = "";
-    self.team = "axis";
+    self.team = "allies";
     self.type = "human";
     self.subclass = "regular";
     self.accuracy = 0.2;
@@ -21,26 +21,33 @@ main()
         self setengagementmaxdist( 512.0, 1024.0 );
     }
 
-    self.weapon = "deserteagle";
-    if ( level.script == "coup" )
+    self.weapon = "ak74u";
+
+    switch ( codescripts\character::get_random_character( 3 ) )
     {
-        character\character_shadow_co_rnd::main();
-    }
-    else
-    {
-        character\character_vil_makarov::main();
+        case 0:
+            character\character_shadow_co_smg_b::main();
+            break;
+        case 1:
+            character\character_shadow_co_smg_c::main();
+            break;
+        case 2:
+            character\character_shadow_co_assault_c::main();
+            break;
     }
 }
 
 spawner()
 {
-    self setspawnerteam( "axis" );
+    self setspawnerteam( "allies" );
 }
 
 precache()
 {
-    character\character_vil_makarov::precache();
-    precacheitem( "deserteagle" );
+    character\character_shadow_co_smg_b::precache();
+    character\character_shadow_co_smg_c::precache();
+    character\character_shadow_co_assault_c::precache();
+    precacheitem( "ak74u" );
     precacheitem( "beretta" );
     precacheitem( "beretta" );
     precacheitem( "fraggrenade" );

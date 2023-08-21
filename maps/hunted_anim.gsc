@@ -237,10 +237,10 @@ player_anims()
 {
     level.scr_anim["player_flight_helicopter"]["flight_crash_player"] = %hunted_bh_crash_player;
     level.scr_animtree["player_flight_helicopter"] = #animtree;
-    level.scr_model["player_flight_helicopter"] = "viewbody_us_army"; //here
+    level.scr_model["player_flight_helicopter"] = "worldbody_h1_sas_woodland"; //here
     level.scr_anim["opening_player_model"]["opening_player"] = %hunted_opening_player;
     level.scr_animtree["opening_player_model"] = #animtree;
-    level.scr_model["opening_player_model"] = "viewbody_us_army"; //here
+    level.scr_model["opening_player_model"] = "worldbody_h1_sas_woodland"; //here
 }
 
 #using_animtree("vehicles");

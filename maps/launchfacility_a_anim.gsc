@@ -173,7 +173,7 @@ player_rappel()
 {
     level.scr_anim["player_rappel"]["rappel"] = %launchfacility_a_player_rappel;
     level.scr_animtree["player_rappel"] = #animtree;
-    level.scr_model["player_rappel"] = "viewbody_us_army"; //here
+    level.scr_model["player_rappel"] = "worldbody_h1_sas_woodland"; //here
     maps\_anim::addnotetrack_animsound( "player_rappel", "rappel", "start", "rappel_liftrope_clipin_npc" );
 }
 

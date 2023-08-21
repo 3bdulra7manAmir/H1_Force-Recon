@@ -4385,7 +4385,7 @@ getdamagetype( var_0 )
 
 initprecache()
 {
-    precachemodel( "viewbody_us_army" ); //here
+    precachemodel( "worldbody_h1_sas_woodland" ); //here
     precachemodel( "viewhands_us_army" ); //here
     precachemodel( "viewhands_player_us_army" ); //here
     precachemodel( "projectile_cbu97_clusterbomb" );

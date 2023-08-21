@@ -162,7 +162,7 @@ main()
     level.scr_anim["guy4"]["unload"] = %ch46_unload_4;
     level.scr_anim["victim"]["shot"] = %h1_helicopter_pilot2_death;
     level.scr_anim["copilot"]["shot"][0] = %h1_helicopter_pilot1_reaction;
-    level.scr_anim["makarov"]["talking"] = %dubai_finale_draw_makarov_face;
+    //level.scr_anim["makarov"]["talking"] = %dubai_finale_draw_makarov_face;
     level.scr_anim["price"]["crouch"] = %exposed_stand_2_crouch;
     level.scr_radio["incoming_helicopter"] = "sniperescape_mcm_incomingheli";
     level.scr_radio["hit_the_rotor"] = "sniperescape_mcm_hittherotor";
@@ -183,7 +183,8 @@ main()
     level.scr_radio["range_to_bmp"] = "sniperescape_mcm_bmprange";
     level.scr_radio["table_with_case"] = "sniperescape_mcm_table";
     level.scr_radio["i_see_him"] = "sniperescape_mcm_mymark";
-    level.scr_radio["target_acquired"] = "sniperescape_mcm_positiveid";
+    //level.scr_radio["target_acquired"] = "sniperescape_mcm_positiveid";
+    level.zakhaev.name = "Makarov";
     level.scr_radio["where_did_he_come_from"] = "sniperescape_mcm_clearshot";
     level.scr_radio["wind_picked_up"] = "sniperescape_mcm_eyeonflag";
     level.scr_radio["take_the_shot"] = "sniperescape_mcm_taketheshot";
@@ -507,10 +508,10 @@ uaz_anims()
     var_0[0].getout = undefined;
     var_0[1].nodeath = 1;
     var_0[3].getout = undefined;
-    var_0[0].talk = %h1_sniper_escape_flashback_makarov;
-    var_0[0].talk_transition = %h1_sniper_escape_flashback_makarov_transition;
+    //var_0[0].talk = %h1_sniper_escape_flashback_makarov;
+    //var_0[0].talk_transition = %h1_sniper_escape_flashback_makarov_transition;
     var_0[3].talk = %h1_sniper_escape_flashback_yuri;
-    var_0[0].panic = %h1_sniper_escape_flashback_makarov_transition_back;
+    //var_0[0].panic = %h1_sniper_escape_flashback_makarov_transition_back;
     var_0[3].panic = %technical_passenger_duck;
     return var_0;
 }

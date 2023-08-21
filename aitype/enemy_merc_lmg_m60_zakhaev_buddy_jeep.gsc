@@ -17,19 +17,12 @@ main()
 
     if ( isai( self ) )
     {
-        self setengagementmindist( 128.0, 0.0 );
-        self setengagementmaxdist( 512.0, 1024.0 );
+        self setengagementmindist( 512.0, 400.0 );
+        self setengagementmaxdist( 1024.0, 1250.0 );
     }
 
-    self.weapon = "deserteagle";
-    if ( level.script == "coup" )
-    {
-        character\character_shadow_co_rnd::main();
-    }
-    else
-    {
-        character\character_vil_makarov::main();
-    }
+    self.weapon = "m60e4_jeeprideending_zakhaevbuddy1";
+    character\character_vil_makarov_sidekick2::main();
 }
 
 spawner()
@@ -39,8 +32,8 @@ spawner()
 
 precache()
 {
-    character\character_vil_makarov::precache();
-    precacheitem( "deserteagle" );
+    character\character_vil_makarov_sidekick2::precache();
+    precacheitem( "m60e4_jeeprideending_zakhaevbuddy1" );
     precacheitem( "beretta" );
     precacheitem( "beretta" );
     precacheitem( "fraggrenade" );

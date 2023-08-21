@@ -7,8 +7,8 @@ anim_main()
 {
     maps\_load::set_player_viewhand_model( "viewhands_player_sas_woodland" ); //here
     level.scr_model["player_viewhands"] = "viewhands_player_sas_woodland"; //here
-    level.scr_model["view_body"] = "viewbody_us_army"; //here
-    level.scr_model["player_rig"] = "viewbody_us_army"; //here
+    level.scr_model["view_body"] = "worldbody_h1_sas_woodland"; //here
+    level.scr_model["player_rig"] = "worldbody_h1_sas_woodland"; //here
     maps\_anim::addnotetrack_customfunction( "generic", "fire", maps\armada::kill_during_breach, "detcord_stack_leftbreach_02" );
     anim_blackhawk();
     level.scr_anim["generic"]["jog"] = %combat_jog;
@@ -124,8 +124,8 @@ animated_model_setup()
 anim_blackhawk()
 {
     level.scr_model["player_viewhands"] = "viewhands_player_sas_woodland"; //here
-    level.scr_model["view_body"] = "viewbody_us_army"; //here
-    level.scr_model["player_rig"] = "viewbody_us_army"; //here
+    level.scr_model["view_body"] = "worldbody_h1_sas_woodland"; //here
+    level.scr_model["player_rig"] = "worldbody_h1_sas_woodland"; //here
     level.scr_animtree["blackhawk"] = #animtree;
     level.scr_anim["blackhawk"]["interiorwires"][0] = %h1_blackhawk_interiorwires;
 }
@@ -134,8 +134,8 @@ player_heli_ropeanimoverride()
 {
     maps\_load::set_player_viewhand_model( "viewhands_player_sas_woodland" ); //here
     level.scr_model["player_viewhands"] = "viewhands_player_sas_woodland"; //here
-    level.scr_model["view_body"] = "viewbody_us_army"; //here
-    level.scr_model["player_rig"] = "viewbody_us_army"; //here
+    level.scr_model["view_body"] = "worldbody_h1_sas_woodland"; //here
+    level.scr_model["player_rig"] = "worldbody_h1_sas_woodland"; //here
     var_0 = "TAG_FastRope_RI";
     var_1 = "rope_test_ri";
     var_2 = %armada_blackhawk_sniper_idle_fastrope80;
@@ -161,8 +161,8 @@ player_heli_ropeanimoverride()
 player_heli_ropeanimoverride_idle( var_0, var_1, var_2 )
 {
     level.scr_model["player_viewhands"] = "viewhands_player_sas_woodland"; //here
-    level.scr_model["view_body"] = "viewbody_us_army"; //here
-    level.scr_model["player_rig"] = "viewbody_us_army"; //here
+    level.scr_model["view_body"] = "worldbody_h1_sas_woodland"; //here
+    level.scr_model["player_rig"] = "worldbody_h1_sas_woodland"; //here
     self endon( "unloading" );
 
     for (;;)

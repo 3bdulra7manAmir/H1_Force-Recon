@@ -14,6 +14,6 @@ main()
 
     precachemodel( "viewhands_player_us_army" );
     precachemodel( "head_shadow_co_c" );
-    precachemodel( "viewbody_us_army" );
+    precachemodel( "worldbody_h1_sas_woodland" );
     precachemodel( "body_shadow_co_assault" );
 }

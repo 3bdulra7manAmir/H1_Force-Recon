@@ -23,6 +23,8 @@ main()
 {
     precacheitem( "cobra_seeker" );
     precacheitem( "hind_turret_penetration" );
+    level.price.name = "Captain Shephered - Shadow Company";
+    level.zakhaev.name = "Makarov";
     level.sniperescape_fastload = 0;
 
     if ( getdvar( "beautiful_corner" ) == "1" )
@@ -45,8 +47,12 @@ main()
     maps\sniperescape_fx::main();
     maps\_stealth_logic::stealth_init();
     maps\_stealth_behavior::main();
+    level.price.name = "Captain Shephered - Shadow Company";
+    level.zakhaev.name = "Makarov";
     maps\_load::set_player_viewhand_model( "viewhands_player_sas_woodland" );
     setsaveddvar( "sv_znear", "1.0" );
+    level.price.name = "Captain Shephered - Shadow Company";
+    level.zakhaev.name = "Makarov";
     level.player allowstand( 0 );
     animscripts\dog\dog_init::initdoganimations();
     setsaveddvar( "ai_eventDistFootstep", "32" );
@@ -348,6 +354,8 @@ monitor_macmellon()
 
     for (;;)
     {
+        level.price.name = "Captain Shephered - Shadow Company";
+        level.zakhaev.name = "Makarov";
         if ( level.melonhead_mode_enabled )
             self.name = "Cpt. MacMellon";
         else
@@ -446,6 +454,8 @@ priceinit()
     self.moveplaybackrate = 1.21;
     self.ignoresuppression = 1;
     self.animname = "price";
+    level.price.name = "Captain Shephered - Shadow Company";
+    level.zakhaev.name = "Makarov";
     self.ignorerandombulletdamage = 1;
     thread maps\_props::ghillie_leaves();
 }
@@ -458,6 +468,8 @@ playerangles()
 
 snipe()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
+    level.zakhaev.name = "Makarov";
     soundscripts\_snd::snd_message( "start_default_checkpoint" );
     objective_add( maps\sniperescape_wounding::getobj( "zakhaev" ), "active", &"SNIPERESCAPE_ELIMINATE_IMRAN_ZAKHAEV", maps\sniperescape_exchange::exchange_turret_org() );
     setsaveddvar( "xanim_disableFootIKOutsidePlayerView", 0 );
@@ -631,6 +643,8 @@ barline()
 
 setup_rappel()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
+    level.zakhaev.name = "Makarov";
     var_0 = getent( "rappel_trigger", "targetname" );
     var_0 common_scripts\utility::trigger_off();
     var_1 = maps\_utility::spawn_anim_model( "rope" );
@@ -666,6 +680,7 @@ trigger_monitor_player_lean()
 
 player_rappel()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = getnode( "player_rappel_node", "targetname" );
     var_1 = maps\_utility::spawn_anim_model( "player_rope" );
     var_0 thread maps\_anim::anim_first_frame_solo( var_1, "rappel_for_player" );
@@ -736,6 +751,7 @@ rappel_rumble()
     var_0 = maps\_utility::rumble_sequence_add_key( var_0, 7.45, "generic_attack_light_2000" );
     var_0 = maps\_utility::rumble_sequence_add_key( var_0, 8.37, "generic_attack_medium_500" );
     level.player thread maps\_utility::rumble_sequence_play( var_0, 0 );
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 rappel_out_of_hotel()
@@ -796,6 +812,7 @@ rappel_out_of_hotel()
     setsaveddvar( "phys_bulletspinscale", "3" );
     level.price maps\_utility::set_force_color( "r" );
     thread battle_through_heat_area();
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 activate_chair_clip()
@@ -826,12 +843,14 @@ price_climbs_until_player_rappels( var_0, var_1 )
 
     maps\_utility::arcademode_checkpoint( 5, "a" );
     var_1 thread maps\_anim::anim_single( var_0, "rappel_end" );
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 apartment_explosion()
 {
     wait 4.0;
     common_scripts\utility::flag_set( "apartment_explosion" );
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 start_run()
@@ -851,6 +870,7 @@ start_run()
     maps\sniperescape_wounding::plant_price();
     level.player setorigin( var_2.origin );
     thread battle_through_heat_area();
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 battle_through_heat_area()
@@ -885,6 +905,7 @@ battle_through_heat_area()
     thread maps\sniperescape_code::defend_heat_area_until_enemies_leave();
     level.price maps\_utility::set_force_color( "y" );
     thread the_apartment();
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 price_runs_for_woods_on_contact()
@@ -893,6 +914,7 @@ price_runs_for_woods_on_contact()
     level.price maps\_utility::set_force_color( "b" );
     level.price.dontshootwhilemoving = undefined;
     common_scripts\utility::flag_set( "price_cuts_to_woods" );
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 start_apartment()
@@ -914,6 +936,7 @@ start_apartment()
     level.player setorigin( var_2.origin );
     level.price maps\_utility::set_force_color( "y" );
     thread the_apartment();
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 the_apartment()
@@ -955,6 +978,7 @@ the_apartment()
     level.price thread maps\_utility::set_ignoreall( 0 );
     thread maps\sniperescape_code::dog_attacks_fence();
     thread the_wounding();
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 window_mantle_transition()
@@ -981,6 +1005,7 @@ window_mantle_transition()
     }
 
     level.price maps\_utility::enable_cqbwalk();
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 start_wounding()
@@ -1005,6 +1030,7 @@ start_wounding()
     level.price maps\_utility::set_force_color( "y" );
     thread the_wounding();
     thread maps\sniperescape_code::player_touches_wounded_blocker();
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 start_crash()
@@ -1038,6 +1064,7 @@ start_crash()
     common_scripts\utility::flag_set( "patrol_guys_dead" );
     level waittill( "start_continues" );
     common_scripts\utility::flag_set( "heli_shot_down" );
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 the_wounding()
@@ -1076,12 +1103,14 @@ the_wounding()
     common_scripts\utility::flag_wait( "price_arrives_wait_more_behind_node" );
     level.price.maxvisibledist = 8000;
     thread maps\sniperescape_wounding::heli_attacks_price_new();
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 confirm_price_at_goal()
 {
     level.price waittill( "goal" );
     common_scripts\utility::flag_set( "price_arrives_wait_more_behind_node" );
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 fight_enemies_behind()
@@ -1126,6 +1155,7 @@ heli_attacks_price()
     maps\_utility::delaythread( 7.2, common_scripts\_exploder::exploder, 500 );
     var_0 maps\_anim::anim_single_solo( level.price, "wounded_begins" );
     thread wounded_combat();
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 price_waits_for_enemies_to_walk_past()
@@ -1165,6 +1195,7 @@ start_wounded()
     level.player setorigin( var_3.origin );
     level.price maps\_utility::disable_ai_color();
     thread wounded_combat();
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 wounded_combat()
@@ -1203,6 +1234,7 @@ escort_to_park()
     common_scripts\utility::flag_wait( "enter_burnt" );
     maps\_utility::autosave_by_name( "entered_burnt" );
     thread enter_burnt_apartment();
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 start_burnt()
@@ -1231,6 +1263,7 @@ start_burnt()
     wait 0.05;
     thread maps\sniperescape_code::price_wounded_logic();
     thread enter_burnt_apartment();
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 enter_burnt_apartment()
@@ -1249,6 +1282,7 @@ enter_burnt_apartment()
     var_0 = getent( "level_end", "targetname" );
     var_0.origin += ( 0.0, 150.0, 0.0 );
     thread fairgrounds_before_battle();
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 start_pool()
@@ -1279,6 +1313,7 @@ start_pool()
     thread maps\sniperescape_code::price_wounded_logic();
     thread fairgrounds_before_battle();
     thread pool();
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 pool()
@@ -1311,6 +1346,7 @@ pool()
 
     common_scripts\utility::flag_wait( "player_enters_fairgrounds" );
     level.player.maxvisibledist = var_0;
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 start_fair()
@@ -1342,6 +1378,7 @@ start_fair()
     common_scripts\utility::flag_set( "player_enters_fairgrounds" );
     common_scripts\utility::flag_set( "to_the_pool" );
     common_scripts\utility::flag_set( "fair_snipers_died" );
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 start_fair_battle()
@@ -1371,6 +1408,7 @@ start_fair_battle()
     thread fairgrounds_after_prep();
     common_scripts\utility::flag_set( "player_enters_fairgrounds" );
     common_scripts\utility::flag_set( "to_the_pool" );
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 fairgrounds_before_battle()
@@ -1534,6 +1572,7 @@ start_seaknight()
     objective_additionalcurrent( maps\sniperescape_wounding::getobj( "holdout" ) );
     objective_icon( maps\sniperescape_wounding::getobj( "holdout" ), "objective_heli" );
     thread maps\sniperescape_code::update_seaknight_objective_pos( maps\sniperescape_wounding::getobj( "holdout" ) );
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 seaknight_flies_in( var_0 )
@@ -1748,6 +1787,7 @@ h1_set_up_mac_run_rappel()
     level.scripted_node_mac_run_rappel = spawn( "script_origin", ( 630.813, -11560.4, 998.389 ) );
     level.rappel_chair = maps\_utility::spawn_anim_model( "rappel_chair" );
     level.scripted_node_mac_run_rappel maps\_anim::anim_first_frame_solo( level.rappel_chair, "run_to_rappel" );
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 h1_handle_mac_run_past_chair()
@@ -1766,6 +1806,7 @@ h1_handle_mac_run_past_chair()
     level.rappel_chair waittillmatch( "single anim", "chair_out" );
     var_1 thread activate_chair_clip();
     level.price waittillmatch( "single anim", "end" );
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 set_combat_ads_lods_at_rappel()

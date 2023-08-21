@@ -206,7 +206,7 @@ player_anims()
     level.scr_anim["playerview"]["drag_player"] = %jeepride_drag_player;
     level.scr_anim["playerview"]["player_pickup"] = %jeepride_player_pickup_player;
     level.scr_anim["playerview"]["drag_player_wait"] = %h1_jeepride_drag_player_wait;
-    level.scr_model["playerview"] = "viewbody_us_army"; //here
+    level.scr_model["playerview"] = "worldbody_h1_sas_woodland"; //here
     level.scr_animtree["playerview"] = #animtree;
     level.scr_anim["playerview"]["player_bridge"] = %h1_jeepride_bridgeexplosion_wakeup;
     level.scr_anim["playerview"]["player_bridgeexplosion"] = %h1_jeepride_beforeexplosion_player;

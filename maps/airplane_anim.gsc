@@ -173,7 +173,7 @@ player_view()
     level.scr_animtree["player_view"] = #animtree;
     level.scr_model["player_view"] = "viewhands_player_sas_woodland";
     level.scr_animtree["worldbody"] = #animtree;
-    level.scr_model["worldbody"] = "viewbody_us_army";
+    level.scr_model["worldbody"] = "worldbody_h1_sas_woodland";
     level.scr_anim["worldbody"]["airplane_end_player"] = %h1_airplane_tandem_jump_full;
 }
 

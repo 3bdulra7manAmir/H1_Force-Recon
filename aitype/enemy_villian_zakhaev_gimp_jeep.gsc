@@ -22,14 +22,7 @@ main()
     }
 
     self.weapon = "deserteagle";
-    if ( level.script == "coup" )
-    {
-        character\character_shadow_co_rnd::main();
-    }
-    else
-    {
-        character\character_vil_makarov::main();
-    }
+    character\character_vil_makarov::main();
 }
 
 spawner()

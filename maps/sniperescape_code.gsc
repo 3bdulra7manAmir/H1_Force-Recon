@@ -58,6 +58,7 @@ spawn_guys_from_targetname( var_0 )
 
 chase_chopper_guys_land()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self endon( "death" );
     self waittill( "jumpedout" );
 
@@ -73,6 +74,7 @@ chase_chopper_guys_land()
 
 chopper_guys_land()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self endon( "death" );
     self waittill( "jumpedout" );
 
@@ -137,6 +139,7 @@ reacquire_player_pos()
 
 stay_put()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self setgoalpos( self.origin );
     self.goalradius = 64;
 }
@@ -515,6 +518,7 @@ new_enemy_callout( var_0 )
 
 price_clears_dialogue()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     maps\_utility::radio_dialogue_stop();
     level.price_dialogue_master delete();
     create_price_dialogue_master();
@@ -522,12 +526,14 @@ price_clears_dialogue()
 
 create_price_dialogue_master()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price_dialogue_master = spawn( "script_origin", ( 0.0, 0.0, 0.0 ) );
     level.price_dialogue_master.last_dialogue_line = -5000;
 }
 
 price_line( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( isdefined( level.scr_sound["price"][var_0] ) )
         level.price_dialogue_master maps\_utility::function_stack( ::play_sound_on_price, level.scr_sound["price"][var_0] );
     else
@@ -536,6 +542,7 @@ price_line( var_0 )
 
 play_sound_on_price( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     maps\_utility::wait_for_buffer_time_to_pass( self.last_dialogue_line, 1 );
 
     if ( !isdefined( self ) )
@@ -556,6 +563,7 @@ play_sound_on_price( var_0 )
 
 play_sound_on_player( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     maps\_utility::wait_for_buffer_time_to_pass( self.last_dialogue_line, 1 );
 
     if ( !isdefined( self ) )
@@ -571,6 +579,7 @@ play_sound_on_player( var_0 )
 
 price_is_talking()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( !isdefined( level.price_dialogue_master ) )
         return 0;
 
@@ -582,6 +591,7 @@ price_is_talking()
 
 price_calls_out_guy( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( !common_scripts\utility::flag( "price_cuts_to_woods" ) )
         return;
 
@@ -609,6 +619,7 @@ price_calls_out_guy( var_0 )
 
 player_hit_debug()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.player endon( "death" );
 
     for (;;)
@@ -628,6 +639,7 @@ delete_living()
 
 heli_attacks_start()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = maps\_vehicle::spawn_vehicle_from_targetname_and_drive( "heli_attacks_start" );
     var_0 maps\_vehicle_code::helipath( var_0.target, 70, 70 );
 }
@@ -657,6 +669,7 @@ heli_trigger()
 
 block_path()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = getent( self.target, "targetname" );
     var_0 connectpaths();
     var_0 notsolid();
@@ -675,6 +688,7 @@ block_path()
 
 get_patrol_anims()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = [];
     var_0[1] = "patrol_look_up_once";
     var_0[2] = "patrol_360_once";
@@ -685,6 +699,7 @@ get_patrol_anims()
 
 get_patrol_run_anims()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = [];
     var_0[1] = "patrol_look_up";
     var_0[2] = "patrol_360";
@@ -695,6 +710,7 @@ get_patrol_run_anims()
 
 patrol_guy()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self endon( "death" );
     var_0 = get_patrol_anims();
     self.allowdeath = 1;
@@ -748,6 +764,7 @@ patrol_guy()
 
 delete_wounding_sight_blocker()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( common_scripts\utility::flag( "wounding_sight_blocker_deleted" ) )
         return;
 
@@ -769,6 +786,7 @@ player_touches_wounded_blocker()
 
 countdown( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_1 = 1200;
 
     if ( isdefined( var_0 ) )
@@ -798,6 +816,7 @@ countdown( var_0 )
 
 defend_heat_area_until_enemies_leave()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level endon( "heat_area_cleared" );
     var_0 = getent( "price_death_org", "targetname" ).origin;
     var_1 = getnode( "enemy_flee_node", "targetname" );
@@ -818,6 +837,7 @@ defend_heat_area_until_enemies_leave()
 
 defend_heat_area_until_player_goes_back( var_0, var_1, var_2 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level endon( "heat_area_cleared" );
     level.price endon( "death" );
 
@@ -875,6 +895,7 @@ wait_until_the_heat_defend_area_is_clear( var_0, var_1 )
 
 flee_heat_area( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level endon( "player_goes_back_to_heat_area" );
     self notify( "stop_moving_in" );
     self notify( "stop_going_to_node" );
@@ -889,6 +910,7 @@ flee_heat_area( var_0 )
 
 kill_shielded_price()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level notify( "stop_updating_objective" );
     level.price maps\_utility::stop_magic_bullet_shield();
     price_dies();
@@ -896,12 +918,14 @@ kill_shielded_price()
 
 player_too_far_from_macmillan_fail()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     setdvar( "ui_deadquote", &"SNIPERESCAPE_TOO_FAR_FROM_MACMILLAN" );
     maps\_utility::missionfailedwrapper();
 }
 
 price_dies()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( isalive( level.price ) )
         level.price kill( ( 0.0, 0.0, 0.0 ) );
 
@@ -911,6 +935,7 @@ price_dies()
 
 price_wounding_kill_trigger()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level endon( "price_is_safe_after_wounding" );
     common_scripts\utility::flag_wait( "player_leaves_price_wounding" );
     kill_shielded_price();
@@ -918,6 +943,7 @@ price_wounding_kill_trigger()
 
 heli_shoots_rockets_at_ent( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_1 = missile_createattractorent( var_0, 100000, 60000 );
     maps\_helicopter_globals::fire_missile( "mi28_seeker", 3, var_0, 0.75 );
     wait 5;
@@ -926,6 +952,7 @@ heli_shoots_rockets_at_ent( var_0 )
 
 kills_enemies_then_wounds_price_then_leaves()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level endon( "price_was_hit_by_heli" );
     level.price thread price_heli_hit_detection();
     kill_all_visible_enemies();
@@ -936,6 +963,7 @@ kills_enemies_then_wounds_price_then_leaves()
 
 price_heli_hit_detection()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     for (;;)
     {
         level.price waittill( "damage", var_0, var_1 );
@@ -949,6 +977,7 @@ price_heli_hit_detection()
 
 can_see_from_array( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     for ( var_1 = 0; var_1 < var_0.size; var_1++ )
     {
         if ( bullettracepassed( self.origin, var_0[var_1].origin + ( 0.0, 0.0, 64.0 ), 0, self ) )
@@ -960,6 +989,7 @@ can_see_from_array( var_0 )
 
 remove_drivers_from_array( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_1 = [];
 
     for ( var_2 = 0; var_2 < var_0.size; var_2++ )
@@ -973,12 +1003,14 @@ remove_drivers_from_array( var_0 )
 
 kill_all_enemies()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = getaiarray( "axis" );
     common_scripts\utility::array_thread( var_0, ::die_soon );
 }
 
 kill_all_visible_enemies()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     for (;;)
     {
         var_0 = getaiarray( "axis" );
@@ -1001,6 +1033,7 @@ kill_all_visible_enemies()
 
 kill_all_visible_enemies_forever()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self endon( "stop_killing_enemies" );
     self endon( "death" );
 
@@ -1013,6 +1046,7 @@ kill_all_visible_enemies_forever()
 
 die_soon()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self endon( "death" );
     wait(randomfloatrange( 0.5, 2.0 ));
     self kill( ( 0.0, 0.0, 0.0 ) );
@@ -1033,6 +1067,7 @@ array_remove_without_model( var_0, var_1 )
 
 price_flees_grenades()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( common_scripts\utility::flag( "fairbattle_detected" ) )
         return;
 
@@ -1112,6 +1147,7 @@ price_flees_grenades()
 
 price_teleports_to_player()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = spawn( "script_origin", level.price.origin );
     level.price linkto( var_0 );
     var_0 moveto( level.player.origin, 1 );
@@ -1141,11 +1177,13 @@ price_teleports_to_player()
 
 underground()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     return level.price.origin[2] < level.player.origin[2] - 1500;
 }
 
 price_teleports_to_spot( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price thread maps\_anim::anim_loop_solo( level.price, "wounded_idle" );
     price_teleports_to_org( var_0 );
     level.price notify( "stop_loop" );
@@ -1153,6 +1191,7 @@ price_teleports_to_spot( var_0 )
 
 price_teleports_to_org( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_1 = spawn( "script_origin", level.price.origin );
     level.price linkto( var_1 );
     var_1 moveto( var_0 + ( 0.0, 0.0, 2.0 ), 2 );
@@ -1162,6 +1201,7 @@ price_teleports_to_org( var_0 )
 
 insure_crawler_is_above_ground()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( !underground() )
         return;
 
@@ -1173,6 +1213,7 @@ insure_crawler_is_above_ground()
 
 price_picks_target()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( common_scripts\utility::flag( "fair_hold_fire" ) )
         return 0;
 
@@ -1237,6 +1278,7 @@ price_picks_target()
 
 price_targets_guy( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( isdefined( level.price.targetorg ) )
         level.price.targetorg delete();
 
@@ -1253,6 +1295,7 @@ price_targets_guy( var_0 )
 
 price_turns_towards_guy( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( level.price should_turn_right( var_0.origin ) )
         price_turns_right();
     else
@@ -1261,6 +1304,7 @@ price_turns_towards_guy( var_0 )
 
 should_turn_right( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_1 = anglestoright( ( 0, self.angles[1], 0 ) );
     var_2 = vectornormalize( var_0 - self.origin );
     return vectordot( var_1, var_2 ) > 0;
@@ -1399,6 +1443,7 @@ get_cansee_array( var_0 )
 
 price_moves_to_sniping_position()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = getent( "price_gnoll", "targetname" );
     var_1 = var_0.origin;
     var_2 = ( -3039.22, -3567.34, 117.2 );
@@ -1472,6 +1517,7 @@ price_moves_to_sniping_position()
 
 price_aims_at( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( !isdefined( level.price.targetorg ) )
     {
         var_1 = spawn( "script_origin", ( 0.0, 0.0, 0.0 ) );
@@ -1483,16 +1529,19 @@ price_aims_at( var_0 )
 
 price_turns_right()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price maps\_anim::anim_custom_animmode_solo( level.price, "gravity", "wounded_turn_right" );
 }
 
 price_turns_left()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price maps\_anim::anim_custom_animmode_solo( level.price, "gravity", "wounded_turn_left" );
 }
 
 idle_price_aim_at_player()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self endon( "stop_loop" );
     self endon( "death" );
     self endon( "stop_aim_player" );
@@ -1512,12 +1561,14 @@ idle_price_aim_at_player()
 
 stop_head_tracking()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self waittill( "stop_aim_player" );
     maps\_headtracking::head_tracking_end();
 }
 
 idle_until_price_has_target()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price endon( "death" );
     level.price notify( "stop_loop" );
     waittillframeend;
@@ -1584,12 +1635,14 @@ idle_until_price_has_target()
 
 should_teleport()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = physicstrace( level.price.origin + ( 0.0, 0.0, 2.0 ), level.price.origin + ( 0.0, 0.0, -100.0 ) );
     return var_0[2] > level.price.origin[2] + 60;
 }
 
 fight_until_price_has_no_target()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price endon( "death" );
     level.price endon( "no_enemies" );
 
@@ -1612,6 +1665,7 @@ fight_until_price_has_no_target()
 
 line_to_guy( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price endon( "death" );
     var_0 endon( "death" );
 
@@ -1621,6 +1675,7 @@ line_to_guy( var_0 )
 
 price_fends_off_attacker( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( !isalive( var_0 ) )
         return;
 
@@ -1673,6 +1728,7 @@ price_fends_off_attacker( var_0 )
 
 price_fights_enemies()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price endon( "death" );
     level.price endon( "damage" );
     level.price endon( "pickup" );
@@ -1722,6 +1778,7 @@ price_fights_enemies()
 
 area_is_clear( var_0, var_1 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_2 = 6;
     var_3 = 360 / var_2;
 
@@ -1746,6 +1803,7 @@ area_is_clear( var_0, var_1 )
 
 upwards_normal( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_1 = 0.25;
 
     if ( abs( var_0[0] ) > var_1 )
@@ -1759,6 +1817,7 @@ upwards_normal( var_0 )
 
 wait_for_player_to_drop_price( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     for (;;)
     {
         wait_for_player_to_drop_price_func( var_0 );
@@ -1768,6 +1827,7 @@ wait_for_player_to_drop_price( var_0 )
 
 wait_for_player_to_drop_price_func( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 endon( "trigger" );
     var_1 = getent( "price_gnoll", "targetname" );
 
@@ -1837,6 +1897,7 @@ wait_for_player_to_drop_price_func( var_0 )
 
 price_wounded_logic()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( isdefined( level.price.magic_bullet_shield ) )
         level.price maps\_utility::stop_magic_bullet_shield();
 
@@ -1852,6 +1913,7 @@ price_wounded_logic()
 
 price_updates_objective_pos()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price endon( "death" );
 
     if ( !common_scripts\utility::flag( "beacon_ready" ) )
@@ -1860,6 +1922,7 @@ price_updates_objective_pos()
 
 price_defends_his_spot_until_he_is_picked_up()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     thread price_updates_objective_pos();
     thread price_dies_if_player_goes_too_far();
     thread player_loses_if_price_dies();
@@ -1886,6 +1949,7 @@ price_defends_his_spot_until_he_is_picked_up()
 
 price_slides_into_proper_putdown_position()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( !isdefined( level.price_drop_point ) )
         return;
 
@@ -1902,6 +1966,7 @@ price_slides_into_proper_putdown_position()
 
 price_decides_if_he_can_be_picked_up()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price endon( "death" );
     var_0 = 0;
 
@@ -1934,6 +1999,7 @@ price_decides_if_he_can_be_picked_up()
 
 price_aims_at_his_enemy()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level endon( "price_picked_up" );
     self endon( "price_stops_thinking" );
     level.price endon( "death" );
@@ -1981,6 +2047,7 @@ price_aims_at_his_enemy()
 
 price_calls_out_kills()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price endon( "death" );
     level.price endon( "pickup" );
 
@@ -2000,6 +2067,7 @@ price_calls_out_kills()
 
 price_waits_for_enemy_death_or_new_enemy()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price endon( "enemy" );
     level.price.enemy waittill( "death", var_0, var_1, var_2, var_3 );
     var_4 = 23;
@@ -2007,6 +2075,7 @@ price_waits_for_enemy_death_or_new_enemy()
 
 price_calls_out_kill_if_he_should( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( isalive( var_0 ) )
         return;
 
@@ -2022,6 +2091,7 @@ price_calls_out_kill_if_he_should( var_0 )
 
 price_calls_out_a_kill()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( !isalive( level.price ) )
         return;
 
@@ -2061,6 +2131,7 @@ price_calls_out_a_kill()
 
 player_loses_if_price_dies()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price endon( "pickup" );
     level.price waittill( "death" );
     price_dies();
@@ -2100,6 +2171,7 @@ price_dies_if_player_goes_too_far()
 
 draw_player_viewtag()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     for (;;)
     {
         maps\_debug::drawarrow( level.player.origin, level.player getplayerangles() );
@@ -2109,6 +2181,7 @@ draw_player_viewtag()
 
 drop_to_floor()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = bullettrace( self.origin + ( 0.0, 0.0, 32.0 ), self.origin, 0, undefined );
     self.origin = var_0["position"];
 }
@@ -2117,6 +2190,7 @@ drop_to_floor()
 
 player_picks_up_price()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price notify( "price_stops_thinking" );
     level.price notify( "stop_loop" );
     level.price notify( "head_tracking_end" );
@@ -2280,10 +2354,12 @@ player_picks_up_price()
 
 player_puts_down_price()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( getdvarint( "use_old_crash_pickup" ) != 1 )
         maps\_move_with_animation::carrystop();
 
     thread h1_pricecarry_putdown_dof_generic();
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price notify( "stop_loop" );
     var_0 = spawn( "script_origin", ( 0.0, 0.0, 0.0 ) );
     maps\_utility::lerp_player_view_to_position( level.playerdroppointorg, level.playerdropangles, 0.2, 1.0, 0, 0, 0, 0 );
@@ -2375,6 +2451,7 @@ player_puts_down_price()
 
 h1_pricecarry_pickup_dof_initial()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( common_scripts\utility::flag( "faiground_battle_begins" ) )
         return;
 
@@ -2391,6 +2468,7 @@ h1_pricecarry_pickup_dof_initial()
 
 h1_pricecarry_pickup_dof_generic()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( common_scripts\utility::flag( "faiground_battle_begins" ) )
         return;
 
@@ -2405,6 +2483,7 @@ h1_pricecarry_pickup_dof_generic()
 
 h1_pricecarry_putdown_dof_generic()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( common_scripts\utility::flag( "faiground_battle_begins" ) )
         return;
 
@@ -2442,6 +2521,7 @@ gethealthyenemies()
 
 price_asks_to_be_picked_up_when_its_safe()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level endon( "price_picked_up" );
     level endon( "price_wants_apartment_cleared" );
 
@@ -2507,6 +2587,7 @@ price_talks_if_player_takes_damage()
 
 price_talks_if_enemies_get_near()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level endon( "price_dropped" );
 
     for (;;)
@@ -2535,6 +2616,7 @@ price_talks_if_enemies_get_near()
 
 price_talks_if_enemies_are_near()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level endon( "price_dropped" );
 
     for (;;)
@@ -2551,6 +2633,7 @@ price_talks_if_enemies_are_near()
 
 price_asks_to_be_put_down()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( isalive( level.price ) )
         return;
 
@@ -2578,6 +2661,7 @@ price_asks_to_be_put_down()
 
 wounded_combat_trigger()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self waittill( "trigger" );
     var_0 = getentarray( self.target, "targetname" );
 
@@ -2590,6 +2674,7 @@ wounded_combat_trigger()
 
 player_carries_price_until_he_drops_him()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price notify( "price_stops_aiming" );
     set_objective_pos_to_extraction_point( maps\sniperescape_wounding::getobj( "wounded" ) );
     level.player setmovespeedscale( 0.85 );
@@ -2637,6 +2722,7 @@ player_carries_price_until_he_drops_him()
 
 give_back_weapons()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self enableweapons();
 
     if ( 1 )
@@ -2655,6 +2741,7 @@ give_back_weapons()
 
 take_weapons()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self disableweapons();
 
     if ( 1 )
@@ -2679,6 +2766,7 @@ take_weapons()
 
 take_away_player_ammo()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self endon( "stop_taking_away_ammo" );
 
     for (;;)
@@ -2694,6 +2782,7 @@ take_away_player_ammo()
 
 give_back_player_ammo()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = self getweaponslistprimaries();
 
     for ( var_1 = 0; var_1 < var_0.size; var_1++ )
@@ -2702,6 +2791,7 @@ give_back_player_ammo()
 
 max_price_health()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = [];
     var_0[0] = 800;
     var_0[1] = 600;
@@ -2718,6 +2808,7 @@ max_price_health()
 
 wounded_setup()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.last_callout_direction = "";
     level.next_enemy_call_out = 0;
     level.price.allowpain = 0;
@@ -2751,6 +2842,7 @@ wounded_setup()
 
 int_vec_compare( var_0, var_1 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = ( int( var_0[0] ), int( var_0[1] ), int( var_0[2] ) );
     var_1 = ( int( var_1[0] ), int( var_1[1] ), int( var_1[2] ) );
     return var_0 == var_1;
@@ -2758,6 +2850,7 @@ int_vec_compare( var_0, var_1 )
 
 price_should_be_useable()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( level.player isleaning() )
         return 0;
 
@@ -2777,6 +2870,7 @@ deathdetect()
 
 fairground_price_adjustment()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price endon( "death" );
 
     if ( !isdefined( level.price._stealth ) )
@@ -2909,6 +3003,8 @@ enemy_zone_spawner()
 
 price_asks_to_be_picked_up()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = "lets_get_moving_" + ( randomint( 2 ) + 1 );
 
     if ( common_scripts\utility::flag( "price_wants_apartment_cleared" ) )
@@ -2924,6 +3020,7 @@ price_asks_to_be_picked_up()
 
 wait_until_its_time_to_spawn_another_wave()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level endon( "time_to_spawn_a_new_wave" );
     thread spawn_wave_if_player_moves_far_with_price();
     maps\_utility::waittill_dead_or_dying( "axis" );
@@ -3022,6 +3119,7 @@ apartment_dog_death()
 
 price_followup_line()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level endon( "price_picked_up" );
     common_scripts\utility::flag_assert( "price_picked_up" );
     wait 3;
@@ -3045,6 +3143,7 @@ set_objective_pos_to_extraction_point( var_0 )
 
 extraction_point()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( !common_scripts\utility::flag( "player_moves_through_burnt_apartment" ) )
     {
         var_0 = getent( "objective_burnt_babystep", "targetname" );
@@ -3056,6 +3155,7 @@ extraction_point()
 
 on_the_run_enemies()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self notify( "stop_old_on_the_run_enemies" );
     self endon( "stop_old_on_the_run_enemies" );
     self endon( "death" );
@@ -3078,6 +3178,7 @@ fairground_enemies()
 
 tracks_ent( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self endon( "stop_tracking_weapon" );
     var_1 = getent( "pool_trigger", "targetname" );
 
@@ -3302,6 +3403,7 @@ fairground_air_war()
 
 shoots_down( var_0, var_1 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self endon( "death" );
     self endon( "death_spiral" );
 
@@ -3320,17 +3422,20 @@ shoots_down( var_0, var_1 )
 
 create_apartment_badplace()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = getent( "apartment_bad_place", "targetname" );
     badplace_cylinder( "apartment_badplace", 0, var_0.origin, var_0.radius, 200, "axis" );
 }
 
 delete_apartment_badplace()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     badplace_delete( "apartment_badplace" );
 }
 
 more_plant_claymores()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     common_scripts\utility::flag_wait( "plant_claymore" );
     common_scripts\utility::flag_clear( "plant_claymore" );
     price_line( "place_claymore" );
@@ -3338,6 +3443,7 @@ more_plant_claymores()
 
 burnt_spawners()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = getentarray( "burnt_spawner", "targetname" );
     var_1 = 0;
 
@@ -3376,6 +3482,7 @@ spooky_dog()
 
 spooky_dog_spawns_hidden()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = getent( "spooky_dog_trigger", "targetname" );
     self.goalradius = 64;
     var_1 = getent( "dog_end_goal", "script_noteworthy" );
@@ -3389,6 +3496,7 @@ spooky_dog_spawns_hidden()
 
 spooky_dog_spawns()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self endon( "death" );
     self.pathenemyfightdist = 0;
     self.pathenemylookahead = 0;
@@ -3491,6 +3599,7 @@ waittill_noteworthy_dies( var_0 )
 
 door_opens( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_1 = getent( self.target, "targetname" );
 
     if ( isdefined( var_1 ) )
@@ -3508,6 +3617,7 @@ door_opens( var_0 )
 
 flee_guy_runs()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self endon( "death" );
     self.ignoreall = 1;
     stop_moving_in();
@@ -3532,6 +3642,7 @@ flee_guy_runs()
 
 force_patrol_think()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     stop_moving_in();
     self endon( "death" );
 
@@ -3658,6 +3769,7 @@ best_fair_path( var_0 )
 
 price_opens_fire()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     common_scripts\utility::flag_wait_either( "open_fire", "fairbattle_detected" );
 
     if ( !common_scripts\utility::flag( "fairbattle_detected" ) )
@@ -3673,6 +3785,7 @@ price_opens_fire()
 
 fair_guy_sets_high_intensity()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     fair_guy_waits_for_run_or_death();
     level.fair_runners++;
 
@@ -3682,6 +3795,7 @@ fair_guy_sets_high_intensity()
 
 fair_guy_waits_for_run_or_death()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self endon( "death" );
     self endon( "damage" );
     maps\_utility::ent_flag_wait( "reached_run_point" );
@@ -3689,6 +3803,7 @@ fair_guy_waits_for_run_or_death()
 
 fairground_force_high_intensity()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level endon( "fairbattle_high_intensity" );
     common_scripts\utility::flag_wait( "fairbattle_detected" );
     wait 18;
@@ -3697,6 +3812,7 @@ fairground_force_high_intensity()
 
 stealth_break_detection()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     common_scripts\utility::waittill_either( "alerted_once", "alerted_again" );
     common_scripts\utility::flag_set( "fairbattle_detected" );
 }
@@ -3710,6 +3826,7 @@ faiground_stealth_detection()
 
 fair_guy_pre_battle_behavior( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_1 = [];
     level endon( "fairbattle_high_intensity" );
     thread patrol_fairgrounds_for_player( var_0 );
@@ -3744,6 +3861,7 @@ fair_guy_responds_to_invisible_attack()
 
 player_gets_near()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     wait(randomfloat( 1 ));
 
     for (;;)
@@ -3757,6 +3875,7 @@ player_gets_near()
 
 fair_stop_path_if_near_player()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self endon( "death" );
 
     for (;;)
@@ -4512,6 +4631,8 @@ get_fair_spawners()
 spawn_intro_wave()
 {
     var_0 = get_fair_spawners();
+    level.price.name = "Captain Shephered - Shadow Company";
+    level.zakhaev.name = "Makarov";
 
     if ( level.gameskill == 0 )
     {
@@ -4544,6 +4665,7 @@ spawn_intro_wave()
 
 spawn_lowbie_mixed()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = get_fair_spawners();
 
     if ( level.gameskill == 0 )
@@ -4606,6 +4728,7 @@ spawn_sniper_mixed()
 
 spawn_saw_support()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = get_fair_spawners();
     spawn_classname( var_0, "rpd", 3, 1 );
 
@@ -4625,6 +4748,7 @@ spawn_saw_support()
 
 spawn_saw_support_no_dog()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = get_fair_spawners();
     spawn_classname( var_0, "rpd", 3, 1 );
     spawn_classname( var_0, "g3", 1, 1 );
@@ -4634,6 +4758,7 @@ spawn_saw_support_no_dog()
 
 spawn_rpg_support()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = get_fair_spawners();
     spawn_classname( var_0, "RPG", 3 );
     spawn_classname( var_0, "g3", 1, 1 );
@@ -4643,6 +4768,7 @@ spawn_rpg_support()
 
 spawn_dog_support()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = get_fair_spawners();
 
     if ( level.gameskill == 0 )
@@ -4657,6 +4783,8 @@ spawn_dog_support()
 
 player_has_red_flashing_overlay()
 {
+    level.zakhaev.name = "Makarov";
+    level.price.name = "Captain Shephered - Shadow Company";
     for ( var_0 = 0; var_0 < level.players.size; var_0++ )
     {
         var_1 = level.players[var_0];
@@ -4670,6 +4798,7 @@ player_has_red_flashing_overlay()
 
 fairbattle_autosave()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( level.start_point == "seaknight" )
         return;
 
@@ -4714,6 +4843,7 @@ fairbattle_autosave()
 
 remove_vehicle_riders_from_array( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_1 = [];
 
     for ( var_2 = 0; var_2 < var_0.size; var_2++ )
@@ -4727,6 +4857,8 @@ remove_vehicle_riders_from_array( var_0 )
 
 spawn_heli_pod_1()
 {
+    level.zakhaev.name = "Makarov";
+    level.price.name = "Captain Shephered - Shadow Company";
     wait 25;
     maps\_vehicle::spawn_vehicle_from_targetname_and_drive( "fairground_heli1" );
     maps\_vehicle::spawn_vehicle_from_targetname_and_drive( "fairground_heli2" );
@@ -4736,12 +4868,15 @@ spawn_heli_pod_1()
 
 spawn_heli_pod_2()
 {
+    level.zakhaev.name = "Makarov";
+    level.price.name = "Captain Shephered - Shadow Company";
     maps\_vehicle::spawn_vehicle_from_targetname_and_drive( "fairground_heli3" );
     maps\_vehicle::spawn_vehicle_from_targetname_and_drive( "fairground_heli4" );
 }
 
 chopper_discussion()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     wait 4;
     price_line( "enemy_choppers" );
     wait 7;
@@ -4752,6 +4887,9 @@ chopper_discussion()
 
 fairground_post_detection()
 {
+    level.zakhaev.name = "Makarov";
+    level.price.name = "Captain Shephered - Shadow Company";
+    level.price.name = "Captain Shephered - Shadow Company";
     maps\_utility::battlechatter_on( "axis" );
     var_0 = [];
     var_0["intro_wave"] = ::spawn_intro_wave;
@@ -4777,6 +4915,7 @@ fairground_post_detection()
     var_2.timer = gettime();
     var_2.events = [];
 
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( level.start_point != "fair_battle2" )
     {
         var_2 = add_to_schedule( var_2, "intro_wave", 12 );
@@ -4894,6 +5033,7 @@ fairground_enemy_helis()
 
 heli_drops_off_guys_at_fairground( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     common_scripts\utility::flag_set( "enemy_choppers_incoming" );
     var_1 = maps\_vehicle::spawn_vehicle_from_targetname_and_drive( var_0 );
     var_1 waittill( "unloading" );
@@ -4906,6 +5046,7 @@ heli_drops_off_guys_at_fairground( var_0 )
 
 price_says_this_is_fine()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level endon( "price_picked_up" );
 
     for (;;)
@@ -4923,6 +5064,7 @@ price_says_this_is_fine()
 
 secondary_path_think()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = getentarray( self.targetname, "targetname" );
     var_0 = common_scripts\utility::array_remove( var_0, self );
     var_0[var_0.size] = self;
@@ -4931,6 +5073,7 @@ secondary_path_think()
 
 should_halt()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( !isalive( level.price.enemy ) )
         return 1;
 
@@ -4939,6 +5082,7 @@ should_halt()
 
 price_kill_check()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self waittill( "death", var_0 );
 
     if ( !isalive( var_0 ) )
@@ -4956,6 +5100,7 @@ price_kill_check()
 
 heat_progression_summons_kill_heli()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.kill_heli_progression++;
     self.index = level.kill_heli_progression;
     level.kill_heli_progression_triggers[self.index] = 0;
@@ -4988,6 +5133,7 @@ heat_progression_summons_kill_heli()
 
 kill_heli_logic()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = 75;
     var_1 = 68;
     var_2 = 1;
@@ -5113,6 +5259,7 @@ set_min_time_remaining( var_0 )
 
 price_fights_until_enemies_leave()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     for (;;)
     {
         var_0 = getaiarray( "axis" );
@@ -5228,6 +5375,7 @@ burnt_blocker()
 
 house_chase_spawner()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     self endon( "death" );
 
     for (;;)
@@ -5296,6 +5444,8 @@ sniper_escape_initial_secondary_weapon_loadout()
 
 set_legit_weapons_for_sniper_escape()
 {
+    level.zakhaev.name = "Makarov";
+    level.price.name = "Captain Shephered - Shadow Company";
     level.sniperescape_main_weapon = "m14_scoped_woodland";
     var_0 = [];
     var_0["mp5"] = 1;
@@ -5378,5 +5528,7 @@ force_player_to_use_legit_sniper_escape_weapon()
 
 player_has_legit_sniper_rifle( var_0 )
 {
+    level.zakhaev.name = "Makarov";
+    level.price.name = "Captain Shephered - Shadow Company";
     return isdefined( var_0[level.sniperescape_main_weapon] ) || isdefined( var_0["dragunov"] ) || isdefined( var_0["m14_scoped_silencer"] );
 }

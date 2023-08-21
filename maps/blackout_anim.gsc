@@ -376,7 +376,7 @@ player_rappel()
     level.scr_animtree["player_rig"] = #animtree;
     level.scr_model["player_viewhands"] = "viewhands_player_us_army"; //here
     //level.scr_model["player_rig"] = "worldbody_h1_sas_woodland"; //here
-    level.scr_model["player_rig"] = "viewbody_us_army"; //here
+    level.scr_model["player_rig"] = "worldbody_h1_sas_woodland"; //here
     level.scr_anim["player_rig"]["rappel"] = %sniper_escape_player_rappel;
 
     if ( getdvarint( "use_old_evac" ) == 1 )
@@ -385,7 +385,7 @@ player_rappel()
     {
         level.scr_animtree["evac_rig"] = #animtree;
         //level.scr_model["evac_rig"] = "worldbody_h1_sas_woodland"; //here
-        level.scr_model["evac_rig"] = "viewbody_us_army"; //here
+        level.scr_model["evac_rig"] = "worldbody_h1_sas_woodland"; //here
         level.scr_anim["evac_rig"]["player_evac"] = %h1_blackout_bh_evac_player;
     }
 }

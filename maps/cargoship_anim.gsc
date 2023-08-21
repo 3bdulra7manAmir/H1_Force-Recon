@@ -326,12 +326,12 @@ anim_player()
     precacheitem( "mp5_silencer" );
     precacheitem( "m4_silencer" );
     level.scr_animtree["fastrope_intro"] = #animtree;
-    level.scr_model["fastrope_intro"] = "viewbody_us_army"; //here
+    level.scr_model["fastrope_intro"] = "worldbody_h1_sas_woodland"; //here
     level.scr_anim["fastrope_intro"]["opening"] = %h1_cargoship_opening_player;
     level.scr_anim["fastrope_intro"]["loop"][0] = %h1_cargoship_opening_player;
     level.scr_gun["fastrope_intro"] = "viewmodel_m4_silencer";
     level.scr_animtree["player_viewbody"] = #animtree;
-    level.scr_model["player_viewbody"] = "viewbody_us_army"; //here
+    level.scr_model["player_viewbody"] = "worldbody_h1_sas_woodland"; //here
     level.scr_anim["player_viewbody"]["player_explosion"] = %cargoship_explosion_player;
     level.scr_anim["player_viewbody"]["player_explosion_start"] = %h1_cargoship_explosion_reaction_player;
     maps\_anim::addnotetrack_flag( "player_viewbody", "fade_in", "shellshock_blinking", "player_explosion" );

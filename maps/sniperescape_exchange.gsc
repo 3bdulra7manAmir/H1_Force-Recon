@@ -25,6 +25,7 @@ exchange_turret()
 
     level.player_can_fire_turret_time = gettime() + 1000;
     common_scripts\utility::flag_set( "player_is_on_turret" );
+    level.price.name = "Captain Shephered - Shadow Company";
     level.player allowcrouch( 0 );
     level.player allowstand( 0 );
     setsaveddvar( "r_lodFOVFixedScale", 0.6 );
@@ -190,13 +191,14 @@ exchange_player_fires()
     var_24 = 0;
     var_25 = undefined;
     var_26 = ( 0.0, 0.0, 0.0 );
-
+    level.zakhaev.name = "Makarov";
     for (;;)
     {
         if ( isalive( level.zakhaev ) && !var_21 )
         {
             var_25 = level.zakhaev gettagorigin( "J_Shoulder_LE" );
             var_27 = distance( var_25, var_17.origin );
+            level.zakhaev.name = "Makarov";
 
             if ( var_27 < 3000 )
             {
@@ -354,6 +356,7 @@ exchange_sniper_windmod( var_0 )
 
 exchange_get_safe_shot( var_0 )
 {
+    level.zakhaev.name = "Makarov";
     for ( var_1 = 0; var_1 < self.traces.size; var_1++ )
     {
         var_2 = bullettrace( var_0, self.traces[var_1], 1, undefined );
@@ -425,6 +428,7 @@ drawhit( var_0, var_1 )
 
 hit_zak( var_0 )
 {
+    level.zakhaev.name = "Makarov";
     if ( !isalive( var_0["entity"] ) )
         return 0;
 
@@ -458,12 +462,14 @@ lean_and_smoke()
 
 stand_and_smoke()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = getent( self.target, "targetname" );
     var_0 maps\_anim::anim_generic_loop( self, "smoking" );
 }
 
 exchange_barrett_trigger()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     common_scripts\utility::flag_init( "player_grabbing_barrett_start" );
     thread h1_playergrabbarrettlogic();
     common_scripts\utility::flag_wait( "can_use_turret" );
@@ -486,7 +492,7 @@ exchange_barrett_trigger()
     var_1 useby( level.player );
     thread maps\_utility::autosave_now( 1 );
     wait 1;
-
+    level.zakhaev.name = "Makarov";
     if ( getdvar( "use_old_sniper_text_style" ) == "1" )
     {
         if ( getdvarint( "loc_language", 0 ) == 12 )
@@ -556,9 +562,12 @@ exchange_barrett_trigger()
 
 player_attach_to_barret_with_anim()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = getdvar( "r_znear" );
     setsaveddvar( "r_znear", 1.0 );
+    level.price.name = "Captain Shephered - Shadow Company";
     level.player_intro_node thread maps\_anim::anim_single_solo( level.player_intro_model, "grab_barret" );
+    level.price.name = "Captain Shephered - Shadow Company";
     thread blackscreengrabgun( 4.16 );
     level.player_intro_model thread common_scripts\utility::play_sound_in_space( "sniperescape_m82_foley", level.player_intro_model.origin );
     var_1 = 0.5;
@@ -571,6 +580,7 @@ player_attach_to_barret_with_anim()
     level.player_intro_model delete();
     setsaveddvar( "r_znear", var_0 );
     level.player disablephysicaldepthoffieldscripting();
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 player_attach_to_barret_with_script()
@@ -838,7 +848,7 @@ exchange_baddie_main_think()
     }
 
     var_0 = "exchange_surprise_" + randomint( level.surprise_anims );
-
+    level.zakhaev.name = "Makarov";
     if ( is_zak() )
     {
         var_0 = "exchange_surprise_zakhaev";
@@ -991,6 +1001,7 @@ get_shared_linkto()
 
 is_zak()
 {
+    level.zakhaev.name = "Makarov";
     return isalive( level.zakhaev ) && self == level.zakhaev;
 }
 
@@ -1145,7 +1156,7 @@ exchange_zaks_car_door()
 
 arm_detach()
 {
-    self setmodel( maps\_utility::getmodel( "zak_one_arm" ) );
+    //self setmodel( maps\_utility::getmodel( "zak_one_arm" ) );
     self hidepart( "J_Shoulder_LE" );
     arm_goes_flying( self gettagorigin( "J_Shoulder_LE" ) );
 }
@@ -1154,7 +1165,7 @@ arm_goes_flying( var_0 )
 {
     var_1 = spawn( "script_model", ( 0.0, 0.0, 0.0 ) );
     var_1.origin = var_0;
-    var_1 setmodel( maps\_utility::getmodel( "zak_left_arm" ) );
+    //var_1 setmodel( maps\_utility::getmodel( "zak_left_arm" ) );
 
     if ( getdvar( "ax" ) == "" )
         setdvar( "ax", "-0.01" );
@@ -1272,7 +1283,7 @@ zak_dies()
     self.health = 50000;
     maps\_utility::disable_long_death();
     var_0 = spawn( "script_model", ( 0.0, 0.0, 0.0 ) );
-    var_0 character\character_sp_zakhaev_onearm::main();
+    var_0 character\character_vil_makarov::main();
     var_0 hide();
     var_0.animname = "zak_script_model";
     var_0 maps\_utility::assign_animtree();
@@ -1349,7 +1360,9 @@ exchange_zak_and_guards_jab_it_up( var_0, var_1 )
     wait 0.25;
     common_scripts\utility::flag_set( "zak_spawns" );
     var_3 = maps\_utility::get_guy_with_targetname_from_spawner( "exchange_zak" );
+    level.zakhaev.name = "Makarov";
     level.zakhaev = var_3;
+    level.zakhaev.name = "Makarov";
     var_3 thread exchange_baddie_main_think();
     var_3.a.disablepain = 1;
     var_3 thread zak_dies();
@@ -1868,6 +1881,7 @@ exchange_heli()
 
     if ( isalive( level.zakhaev ) )
     {
+        level.zakhaev.name = "Makarov";
         level.zakhaev notify( "run_to_car" );
         level.zakhaev maps\_utility::anim_stopanimscripted();
     }
@@ -2208,6 +2222,7 @@ deathtouch()
 
 exchange_mission_failure()
 {
+    level.zakhaev.name = "Makarov";
     common_scripts\utility::flag_wait( "zakhaev_escaped" );
 
     if ( common_scripts\utility::flag( "exchange_success" ) )
@@ -2322,6 +2337,7 @@ _hidepart( var_0 )
 
 barrett_intro()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.player disableturretdismount();
     thread whitescreen();
     level.player disableweapons();
@@ -2336,20 +2352,24 @@ barrett_intro()
     wait 2;
     setsaveddvar( "phys_bulletspinscale", "0.01" );
     common_scripts\utility::flag_set( "can_use_turret" );
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 barrett_intro_with_anim()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level.barrett_intro_with_anim = 1;
     level.player_intro_node = getent( level.price.target, "targetname" );
     level.player_intro_model = maps\_utility::spawn_anim_model( "player_grab_barret" );
     level.player_intro_node maps\_anim::anim_first_frame_solo( level.player_intro_model, "grab_barret_prep" );
     level.player_intro_node thread maps\_anim::anim_loop_solo( level.player_intro_model, "grab_barret_idle" );
     level.player playerlinktodelta( level.player_intro_model, "tag_player", 1.0, 25, 30, 35, 50, 0 );
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 barrett_intro_with_script( var_0 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 maps\_utility::lerp_player_view_to_tag( "tag_origin", 0.1, 1, 5, 15, 10, 10 );
 }
 
@@ -2364,8 +2384,11 @@ armtest()
     for (;;)
     {
         var_3 = spawn( "script_model", ( 0.0, 0.0, 0.0 ) );
-        var_3 character\character_sp_zakhaev_onearm::main();
+        level.zakhaev.name = "Makarov";
+        var_3 character\character_vil_makarov::main();
+        level.zakhaev.name = "Makarov";
         var_3.animname = "zakhaev";
+        level.zakhaev.name = "Makarov";
         var_3 maps\_utility::assign_animtree();
         wait 0.5;
         var_1 thread maps\_anim::anim_generic_first_frame( var_3, "zak_pain" );
@@ -2411,6 +2434,7 @@ getplayerc4()
 
 flashback_guy_setup()
 {
+    level.zakhaev.name = "Makarov";
     self endon( "death" );
     self.ignoreall = 1;
     self.allowdeath = 1;
@@ -2418,26 +2442,20 @@ flashback_guy_setup()
     switch ( self.script_startingposition )
     {
         case 0:
-            // level.exchange_makarov = self; //here
-            // self.name = "Suomi"; //here
-            // self.team = "axis"; //here
-            // self.deathanim = %uaz_rear_driver_death; //here
-            // self.tracksuit_ignore = 1; //here
-            // character\gfl\character_gfl_suomi_nofacial::main(); //here
             level.exchange_makarov = self; //here
-            self.name = "Makarov"; //here
+            self.name = "Anatoly"; //here
             self.team = "axis"; //here
             self.deathanim = %uaz_rear_driver_death; //here
             self.tracksuit_ignore = 1; //here
+            level.zakhaev.name = "Makarov";
             break; //here
         case 3:
             level.exchange_yuri = self;
-            self.name = "AK-12";
+            self.name = "Yuri";
             self.team = "allies";
             self.deathanim = %uaz_passenger_death;
             thread codescripts\character::setheadmodel( "head_hero_yuri_a" ); //here
-            self setmodel( "body_spetsnaz_assault_yuri" ); //here
-            //character\gfl\character_gfl_ak12::main(); //here
+            self setmodel( "body_airport_com_b" ); //here
             break;
     }
 
@@ -2451,16 +2469,16 @@ flashback_face_anims()
 {
     self endon( "death" );
     level endon( "player_attacks_exchange" );
-    var_0 = level.scr_anim["makarov"]["talking"];
+    //var_0 = level.scr_anim["makarov"]["talking"];
 
-    if ( isdefined( self ) )
-        self setanim( var_0 );
+    // if ( isdefined( self ) )
+    //     self setanim( var_0 );
 
-    for (;;)
-    {
-        wait(getanimlength( var_0 ));
-        self setanimrestart( var_0 );
-    }
+    // for (;;)
+    // {
+    //     wait(getanimlength( var_0 ));
+    //     self setanimrestart( var_0 );
+    // }
 }
 
 flashback_guys_anim()
@@ -2469,7 +2487,7 @@ flashback_guys_anim()
     level.flashback_guys_uaz maps\_utility::ent_flag_wait( "unloaded" );
     wait 1.5;
     level.flashback_guys_uaz maps\_vehicle::vehicle_ai_event( "talk" );
-    level.exchange_makarov thread flashback_face_anims();
+    //level.exchange_makarov thread flashback_face_anims();
     common_scripts\utility::flag_wait( "player_attacks_exchange" );
     level.flashback_guys_uaz maps\_vehicle::vehicle_ai_event( "panic" );
 }
@@ -2606,13 +2624,14 @@ can_display_flashback_guy_name()
 
 flashback_guys_failure()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level endon( "player_gets_off_turret" );
 
     for (;;)
     {
         level waittill( "flashback_guy_dead", var_0 );
 
-        if ( var_0 == "Makarov" )
+        if ( var_0 == "Anatoly" )
         {
             level.flashback_guys_uaz maps\_utility::ent_flag_set( "driver_dead" );
             common_scripts\utility::flag_set( "makarov_killed" );
@@ -2633,6 +2652,7 @@ flashback_guys_failure()
 
 flashback_time_paradox_monitor()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     level endon( "player_gets_off_turret" );
     common_scripts\utility::flag_wait_all( "exchange_success", "makarov_killed" );
     maps\_utility::giveachievement_wrapper( "TIME_PARADOX" );

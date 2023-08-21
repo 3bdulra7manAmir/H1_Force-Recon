@@ -175,12 +175,12 @@ anims()
 
 player_anims()
 {
-    precachemodel( "viewbody_us_army" ); //here
+    precachemodel( "worldbody_h1_sas_woodland" ); //here
     precachemodel( "viewhands_us_army" ); //here
     precachemodel( "viewhands_player_us_army" ); //here
 
     level.scr_animtree["player_rig"] = #animtree;
-    level.scr_model["player_rig"] = "viewbody_us_army"; //here
+    level.scr_model["player_rig"] = "worldbody_h1_sas_woodland"; //here
     level.scr_anim["player_rig"]["ambush_plr_tower_fall"] = %h1_ambush_tower_fall_player;
     level.scr_anim["player_rig"]["vip_escape_player"] = %ambush_vip_escape_player;
 }

@@ -230,7 +230,7 @@ anim_view_body()
     level.scr_model["view_body"] = "vb_generic_s1";
     level.scr_anim["view_body"]["training_rope"] = %h1_killhouse_player_fastrope;
     level.scr_animtree["view_body_door"] = #animtree;
-    level.scr_model["view_body_door"] = "viewbody_us_army";
+    level.scr_model["view_body_door"] = "worldbody_h1_sas_woodland";
     level.scr_anim["view_body_door"]["player_opendoor"] = %h1_killhouse_player_opendoor;
 }
 

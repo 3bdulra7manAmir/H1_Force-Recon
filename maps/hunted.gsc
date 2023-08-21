@@ -765,7 +765,7 @@ playerview_spawn( var_0, var_1 )
 {
     var_2 = spawn( "script_model", var_0 );
     var_2.angles = var_1;
-    var_2 setmodel( "viewbody_us_army" ); //here
+    var_2 setmodel( "worldbody_h1_sas_woodland" ); //here
     var_2 useanimtree( #animtree );
     var_2 hide();
     return var_2;

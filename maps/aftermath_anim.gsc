@@ -77,7 +77,7 @@ player_body_sense()
     level.scr_anim["player_body"]["jackson_helicopterfall"] = %h1_aftermath_jackson_helicopterfall;
     level.scr_anim["player_body"]["jackson_fall"] = %h1_aftermath_jackson_fall;
     level.scr_anim["player_body"]["jackson_death"] = %h1_aftermath_jackson_death;
-    level.scr_model["player_body"] = "viewbody_us_army"; //here
+    level.scr_model["player_body"] = "worldbody_h1_sas_woodland"; //here
     level.scr_animtree["player_body"] = #animtree;
     maps\_anim::addnotetrack_animsound( "player_body", "jackson_death", "body_hit_ground", "bodyfall_gravel_large" );
 }

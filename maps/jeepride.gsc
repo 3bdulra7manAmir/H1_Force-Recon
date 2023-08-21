@@ -64,6 +64,9 @@ main()
     precachemodel( "weapon_colt1911_black" );
     precachemodel( "weapon_saw" );
     precachemodel( "weapon_rpg7_no_rocket" );
+    precachemodel( "head_airport_d" );
+    precachemodel( "head_airport_b" );
+    precachemodel( "head_airport_a" );
     setomnvar( "ui_jeepride_init", 1 );
     maps\_utility::default_start( ::ride_start );
     maps\_utility::add_start( "start", ::ride_start, &"STARTS_START" );
@@ -163,6 +166,7 @@ main()
     level.vehicle_aianimcheck["backtohide"] = maps\jeepride_code::guy_backtohide_check;
     level.vehicle_aianimthread["react"] = maps\jeepride_code::guy_react;
     level.vehicle_aianimcheck["react"] = maps\jeepride_code::guy_react_check;
+    level.price.name = "Captain Shephered - Shadow Company";
 
     if ( !isdefined( level.fxplay_model ) || getdvar( "jeepride_crashrepro" ) != "off" )
     {
@@ -268,7 +272,8 @@ main()
 
     if ( getdvar( "jeepride_startgen" ) != "off" )
         common_scripts\utility::array_thread( getvehiclenodearray( "startgen", "script_noteworthy" ), maps\jeepride_code::startgen );
-
+    level.price.name = "Captain Shephered - Shadow Company";
+    level.zakhaev.name = "Makarov";
     maps\_utility::delaythread( 185, maps\jeepride_code::falling_bridge_price );
     thread maps\jeepride_code::bridge_bumper();
     thread maps\jeepride_code::bridge_uaz_crash();
@@ -328,10 +333,12 @@ main()
     maps\jeepride_code::bloodtrail_hide();
     maps\jeepride_code::disable_light_finalseq();
     setup_bridge_mi17();
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 rpg_from_griggs()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_0 = getent( "rpg_animation", "targetname" );
     var_0 waittill( "trigger" );
     level.rpg = spawn( "script_model", ( 0.0, 0.0, 1.0 ) );
@@ -362,6 +369,7 @@ hide_weapons( var_0 )
 {
     animscripts\shared::detachallweaponmodels();
     level.price.npcname = "price";
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price.jeeptag = "tag_guy0";
     level.griggs.npcname = "griggs";
     level.griggs.jeeptag = "tag_passenger";
@@ -602,10 +610,12 @@ time_triggers()
 
 dialog_ride_price()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( level.start_point == "nowhere" )
         return;
 
     wait 1;
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price maps\jeepride_code::delaythread_loc( 6.5 + level.intro_offsets_dialog_time, maps\_anim::anim_single_queue, level.price, "jeepride_pri_helistatus" );
     level.player maps\jeepride_code::delaythread_loc( 10 + level.intro_offsets_dialog_time, maps\_utility::play_sound_on_entity, "jeepride_hqr_griggsisnthere" );
     level.price maps\jeepride_code::delaythread_loc( 15 + level.intro_offsets_dialog_time, maps\_anim::anim_single_queue, level.price, "jeepride_pri_notgood" );
@@ -627,6 +637,7 @@ dialog_bridge_radio()
     level.griggs maps\_utility::play_sound_on_entity( "jeepride_hqr_workinonit" );
     level.gaz maps\_anim::anim_single_solo( level.gaz, "jeepride_gaz_uselesswanker" );
     wait 2;
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price maps\_anim::anim_single_solo( level.price, "jeepride_pri_sitreponhelis" );
     level.gaz maps\_anim::anim_single_solo( level.gaz, "jeepride_gaz_wereonourown" );
     wait 3;
@@ -718,6 +729,7 @@ setup_price()
 {
     level.price = self;
     level.price.animname = "price";
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price thread maps\_utility::magic_bullet_shield();
     level.price thread maps\_utility::make_hero();
 }
@@ -726,6 +738,7 @@ setup_griggs()
 {
     level.griggs = self;
     level.griggs.animname = "griggs";
+    level.price.name = "Captain Shephered - Shadow Company";
     level.griggs thread maps\_utility::magic_bullet_shield();
     level.griggs thread maps\_utility::make_hero();
 }
@@ -772,6 +785,7 @@ dialog_get_off_your_ass()
         {
             var_1 = gettime();
             level.price maps\_anim::anim_single_queue( level.price, "jeepride_pri_getoffyour" );
+            level.price.name = "Captain Shephered - Shadow Company";
         }
 
         wait 0.05;
@@ -1117,6 +1131,7 @@ bridge_setupguys( var_0 )
     setsaveddvar( "ai_friendlyFireBlockDuration", 0 );
     level.price.a.disablepain = 1;
     level.price.ignoresuppression = 1;
+    level.price.name = "Captain Shephered - Shadow Company";
     maps\jeepride_code::guy_force_remove_from_vehicle( level.griggs.ridingvehicle, level.griggs, var_5.origin );
     level.griggs unlink();
     level.griggs linkto( var_5, "polySurface1", ( 0.0, 0.0, 0.0 ), ( 0.0, 0.0, 0.0 ) );
@@ -1167,6 +1182,7 @@ bridge_setupguys( var_0 )
     level.price pushplayer( 1 );
     level.price thread maps\_spawner::go_to_node( var_1 );
     wait 2;
+    level.price.name = "Captain Shephered - Shadow Company";
     common_scripts\utility::flag_set( "stop_limp" );
 
     if ( !isalive( level.player ) )
@@ -1222,6 +1238,7 @@ setup_bridge_defense()
 
 bridge_combat()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     soundscripts\_snd::snd_message( "aud_bridge_combat_checkpoint" );
     common_scripts\utility::flag_set( "music_bridge" );
     level.startdelay = 250000;
@@ -1244,6 +1261,7 @@ bridge_combat()
     level.player allowstand( 1 );
     level.player allowprone( 1 );
     level.player allowsprint( 1 );
+    level.price.name = "Captain Shephered - Shadow Company";
     wait 1;
     setup_bridge_defense();
     wait 0.1;
@@ -1251,6 +1269,7 @@ bridge_combat()
 
 spawn_heros_for_start( var_0, var_1, var_2 )
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     var_3 = getent( "price", "script_noteworthy" );
     var_3.origin = var_0;
     var_4 = var_3 stalingradspawn();
@@ -1267,6 +1286,7 @@ spawn_heros_for_start( var_0, var_1, var_2 )
 
 bridge_zak()
 {
+    level.price.name = "Captain Shephered - Shadow Company";
     soundscripts\_snd::snd_message( "aud_bridge_zak_checkpoint" );
     level.startdelay = 250000;
     var_0 = getent( "zak_price_spot", "targetname" );
@@ -1671,6 +1691,8 @@ zakhaev_buddy2_execute_guy( var_0 )
 
 bridge_zakhaev()
 {
+    level.zakhaev.name = "Makarov";
+    level.price.name = "Captain Shephered - Shadow Company";
     if ( !isalive( level.price ) || !isalive( level.griggs ) || !isalive( level.gaz ) || !isalive( level.player ) )
         return;
 
@@ -1723,7 +1745,7 @@ bridge_zakhaev()
 
     if ( level.start_point != "bridge_zak" )
         level.hind notify( "gunner_new_target" );
-
+    level.price.name = "Captain Shephered - Shadow Company";
     common_scripts\utility::array_thread( maps\_vehicle::get_script_vehicles(), ::stop_thinking );
     thread h1_jeepride_bridgeending_dof_seq();
     thread h1_jeepride_bridgeending_rumbles();
@@ -1749,7 +1771,7 @@ bridge_zakhaev()
     // if ( isdefined( level.price.headmodel ) )
     //     var_8 attach( level.price.headmodel, "", 1 );
     var_8 character\character_vil_shephered::main(); //here
-
+    level.price.name = "Captain Shephered - Shadow Company";
     level.price delete();
     level.pricedummy = var_8;
     var_8.animname = "price";
@@ -1797,7 +1819,9 @@ bridge_zakhaev()
         thread bridge_zak_slomo_script_timed_chaplincheat();
     else
         thread bridge_zak_slomo_script_timed();
-
+    
+    level.price.name = "Captain Shephered - Shadow Company";
+    level.zakhaev.name = "Makarov";
     level.player thread end_slowmo_on_death();
     var_9 maps\_utility::delaythread( 1.3, ::_show );
     var_10 maps\_utility::delaythread( 1.3, ::_show );
@@ -1809,7 +1833,9 @@ bridge_zakhaev()
     level.hind thread maps\jeepride_aud::play_zak_enemy_heli_sfx();
     var_14 = getent( "zakhaev", "targetname" ) stalingradspawn();
     maps\_utility::spawn_failed( var_14 );
+    level.zakhaev.name = "Makarov";
     var_14.animname = "zakhaev";
+    level.zakhaev.name = "Makarov";
     var_14.dropweapon = 0;
     var_14.noragdoll = 1;
     var_14.nodrop = 1;
@@ -1820,6 +1846,7 @@ bridge_zakhaev()
     var_15.tracksuit_ignore = 1;
     var_15.noragdoll = 1;
     var_15.nodrop = 1;
+    level.zakhaev.name = "Makarov";
     var_16 = getent( "zakhaev_buddy2", "targetname" ) stalingradspawn();
     maps\_utility::spawn_failed( var_16 );
     var_16.animname = "zakhaev_buddy2";
@@ -1837,6 +1864,7 @@ bridge_zakhaev()
     var_15 thread maps\jeepride_code::blead_on_death();
     var_16 thread maps\jeepride_code::blead_on_death();
     level.nextgrenadedrop = 800;
+    level.zakhaev.name = "Makarov";
 
     for ( var_19 = 0; var_19 < var_18.size; var_19++ )
     {
@@ -1868,6 +1896,7 @@ bridge_zakhaev()
     maps\_utility::delaythread( 13.1, maps\jeepride_code::shot_in_the_head_point_blank, var_9, ( -5.0, 2.0, 2.0 ), ( 42.0, -8.0, 0.0 ) );
     maps\_utility::delaythread( 8.65, maps\jeepride_code::shot_in_the_head_point_blank, var_10, ( -2.0, 3.0, 4.0 ), ( 100.0, 42.0, 0.0 ) );
     maps\_utility::delaythread( 0.72, common_scripts\utility::flag_set, "attack_heli" );
+    level.price.name = "Captain Shephered - Shadow Company";
     var_4 waittillmatch( "single anim", "start_price" );
     thread maps\_utility::autosave_now();
     setomnvar( "ui_jeepride_firefight_recover", 0 );
@@ -2644,6 +2673,7 @@ price_bridge_crawl_anims( var_0 )
     level.price waittillmatch( "animscripted", "end" );
     level.price animscripted( "animscripted", level.price.origin, level.price.angles, %crouch2stand );
     level.price waittillmatch( "animscripted", "end" );
+    level.price.name = "Captain Shephered - Shadow Company";
 }
 
 stop_thinking()
@@ -2745,6 +2775,7 @@ bridge_save()
     setsaveddvar( "ai_friendlyFireBlockDuration", 250 );
     level.price.a.disablepain = 0;
     level.price.ignoresuppression = 0;
+    level.price.name = "Captain Shephered - Shadow Company";
     thread maps\_utility::autosave_by_name( "bridge_save" );
 
     while ( !common_scripts\utility::flag( "game_saving" ) )
@@ -2773,6 +2804,7 @@ shock_ondeath_loc()
 
 bridge_rescue_start()
 {
+    level.zakhaev.name = "Makarov";
     soundscripts\_snd::snd_message( "aud_bridge_rescue_checkpoint" );
     level.startdelay = 350000;
     var_0 = getent( "zak_price_spot", "targetname" );
@@ -2804,6 +2836,7 @@ bridge_rescue_start()
         var_3[var_4] delete();
     }
 
+    level.price.name = "Captain Shephered - Shadow Company";
     thread maps\_vehicle::create_vehicle_from_spawngroup_and_gopath( 71 );
     level.price maps\_utility::stop_magic_bullet_shield();
     var_5 = maps\_vehicle_aianim::convert_guy_to_drone( level.price );

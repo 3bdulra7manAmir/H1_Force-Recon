@@ -209,7 +209,7 @@ player_anims()
     level.scr_animtree["player_carry"] = #animtree;
     level.scr_model["player_carry"] = "viewhands_player_sas_woodland"; //here
     level.scr_animtree["player_viewbody"] = #animtree;
-    level.scr_model["player_viewbody"] = "viewbody_us_army"; //here
+    level.scr_model["player_viewbody"] = "worldbody_h1_sas_woodland"; //here
     level.scr_anim["player_viewbody"]["player_nuke_crash"] = %h1_airlift_crash_player;
     level.scr_animtree["player_viewhands"] = #animtree;
     level.scr_model["player_viewhands"] = "viewhands_player_sas_woodland"; //here
