@@ -3,11 +3,13 @@
 
 main()
 {
+    maps\_custom_utility::detach_all_attachments();
     self setmodel( "body_force_assault_woodland" );
-    self attach( "head_force_assault", "", 1 );
-    self.headmodel = "head_force_assault";
+    self attach( "head_force_assault", "", true );
+    //self.headmodel = "head_force_assault";
     self.voice = "russian";
-    self setclothtype( "vestlight" );
+    //self setclothtype( "vestlight" );
+    maps\_custom_utility::detach_all_attachments();
 }
 
 precache()

@@ -109,6 +109,7 @@ main()
     common_scripts\utility::array_thread( var_0, maps\_stealth_logic::friendly_init );
     maps\_utility::add_global_spawn_function( "allies", maps\_stealth_logic::friendly_init );
     maps\_nightvision::main();
+    maps\_load::set_player_viewhand_model( "viewhands_player_sas_woodland" );
     level thread maps\blackout_amb::main();
     maps\blackout_anim::main();
     maps\blackout_lighting::main();

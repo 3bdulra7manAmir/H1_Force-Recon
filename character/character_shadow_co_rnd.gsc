@@ -30,6 +30,7 @@ main()
 		break;
 	}
 	self.voice = "american";
+	maps\_custom_utility::detach_all_attachments();
 }
 
 precache()

@@ -24,6 +24,7 @@ main()
             break;
     }
 	self.voice = "arab";
+    maps\_custom_utility::detach_all_attachments();
 }
 
 precache()

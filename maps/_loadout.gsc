@@ -64,6 +64,15 @@ give_loadout()
 
     precachemodel( "worldbody_h1_sas_woodland" );
 
+    precachemodel( "body_force_assault_woodland" );
+    precachemodel( "body_force_b_woodland" );
+    precachemodel( "body_force_c_woodland" );
+    //precachemodel( "body_force_mark_woodland" );
+    precachemodel( "head_force_assault" );
+    precachemodel( "head_force_assault_mark" );
+    precachemodel( "head_force_c" );
+    precachemodel( "head_force_chad" );
+
     if (level.script == "sniperescape")
     {
         precachemodel( "h2_head_vil_makarov" );
@@ -91,15 +100,6 @@ give_loadout()
         precachemodel( "body_shadow_co_smg" );
         precachemodel( "body_shadow_co_shotgun" );
     }
-
-    //precachemodel( "body_force_assault_woodland" );
-    //precachemodel( "body_force_b_woodland" );
-    //precachemodel( "body_force_c_woodland" );
-    //precachemodel( "body_force_mark_woodland" );
-    //precachemodel( "head_force_assault" );
-    //precachemodel( "head_force_assault_mark" );
-    //precachemodel( "head_force_c" );
-    //precachemodel( "head_force_chad" );
 
     //precacheitem("gl_masada_digital_eotech");
     //precacheitem("masada");

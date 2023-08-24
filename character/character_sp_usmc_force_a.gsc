@@ -3,15 +3,17 @@
 
 main()
 {
-    self setmodel( "body_force_assault_woodland" );
-    self attach( "head_force_assault", "", 1 );
-    self.headmodel = "head_force_assault";
+    maps\_custom_utility::detach_all_attachments();
+    self setmodel( "body_force_b_woodland" );
+    self attach( "head_force_c", "", true );
+    //self.headmodel = "head_force_c";
     self.voice = "british";
-    self setclothtype( "vestlight" );
+    //self setclothtype( "vestlight" );
+    maps\_custom_utility::detach_all_attachments();
 }
 
 precache()
 {
-    precachemodel( "body_force_assault_woodland" );
-    precachemodel( "head_force_assault" );
+    precachemodel( "body_force_b_woodland" );
+    precachemodel( "head_force_c" );
 }
