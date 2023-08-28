@@ -22,6 +22,10 @@ main()
     }
 
     self.weapon = "m14_scoped_silencer_woodland";
+    if(level.script == "icbm"){
+        character\character_shadow_co_shotgun_c::main();
+    }
+    else{
     switch( codescripts\character::get_random_character(2) )
     {
     case 0:
@@ -30,6 +34,7 @@ main()
 	case 1:
 		character\character_vil_shephered::main();
 		break;
+    }
     }
 }
 
@@ -40,8 +45,8 @@ spawner()
 
 precache()
 {
-    character\character_shadow_co_assault_b::precache();
-    character\character_shadow_co_assault_c::precache();
+    character\character_shadow_co_shotgun_c::precache();
+    character\character_vil_shephered::precache();
     precacheitem( "m14_scoped_silencer_woodland" );
     precacheitem( "usp_silencer" );
     precacheitem( "usp_silencer" );
