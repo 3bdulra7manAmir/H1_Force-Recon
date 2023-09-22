@@ -76,9 +76,9 @@ anims()
         maps\_anim::addnotetrack_dialogue( "price", "dialog", "h1_elevator_elevator", "launchfacility_b_pri_getinline" );
     }
 
-    level.scr_deadbody[1] = character\character_sp_usmc_force_a::main;
-    level.scr_deadbody[2] = character\character_sp_usmc_force_b::main;
-    level.scr_deadbody[3] = character\character_sp_usmc_force_c::main;
+    level.scr_deadbody[1] = character\character_shadow_co_assault_b::main;
+    level.scr_deadbody[2] = character\character_shadow_co_assault_c::main;
+    level.scr_deadbody[3] = character\character_shadow_co_lmg_b::main;
 }
 
 setup_exploder_anims()
