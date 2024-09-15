@@ -1,6 +1,5 @@
 ![Members](https://img.shields.io/discord/750034898680807434?label=members&logo=discord&color=7289da)
 
-<iframe src="https://discord.com/widget?id=750034898680807434&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
 # h1-force-recon
 
