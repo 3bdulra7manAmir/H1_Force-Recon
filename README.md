@@ -2,7 +2,7 @@
  ![Members](https://img.shields.io/discord/750034898680807434?label=members&logo=discord&color=7289da)
 
 
-# h1-force-recon
+# H1_Force-Recon
 
 <h2>Requirements</h2>
 1. A dev version of h1-mod.exe.
