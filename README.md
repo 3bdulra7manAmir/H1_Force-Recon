@@ -1,4 +1,4 @@
-![Members](https://img.shields.io/discord/750034898680807434?label=members&logo=discord&color=7289da)
+![License](https://img.shields.io/badge/license-BSD--3-blue) ![Members](https://img.shields.io/discord/750034898680807434?label=members&logo=discord&color=7289da)
 
 
 # h1-force-recon
